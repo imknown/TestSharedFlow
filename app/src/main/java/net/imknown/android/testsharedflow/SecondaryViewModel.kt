@@ -14,5 +14,8 @@ class SecondaryViewModel : ViewModel() {
     }
     val tryEmitEvent by lazy { _tryEmitEvent.asSharedFlow() }
 
-    fun triggerTryEmit() = _tryEmitEvent.tryEmit((1..100).random().toString())
+    fun triggerTryEmit() {
+        val randomFigure = (1..100).random().toString()
+        _tryEmitEvent.tryEmit(randomFigure)
+    }
 }
